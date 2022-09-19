@@ -1,16 +1,18 @@
 # 06 - Cav2.1 KO
 
-from Purkinje import Purkinje
+from Purkinje_py3 import Purkinje_py3
 from neuron import h
 import multiprocessing
 import numpy as np
+import sys
+
 
 #fixed time step only
 Fixed_step = h.CVode()
 Fixed_step.active(0) #the model does not work with the variable time step!
 
 #Instantiation of the cell template
-cell = Purkinje()
+cell = Purkinje_py3()
 
 #this code discover the number of cores available in a CPU and activate the multisplit to use them all.
 cores = multiprocessing.cpu_count()
@@ -18,7 +20,7 @@ h.load_file("parcom.hoc")
 p = h.ParallelComputeTool()
 p.change_nthread(cores,1)
 p.multisplit(1)
-print 'cores', cores
+print('cores', cores)
 
 #Neuron control menu
 h.nrncontrolmenu()

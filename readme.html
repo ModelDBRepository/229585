@@ -41,6 +41,10 @@ Requirement:
 
 The model was built under Mint (ubuntu based) with NEURON 7.3 and Python 2.7.
 
+CHANGELOG - April 2021
+
+The code runs with NEURON 7.8, NEURON 8 and with Python3.6 to 3.8
+
 It requires a powerfull CPU with as many cores as possibile.
 The model uses NEURON multisplit to distribute automatically the
 calculation on all the available cores.
@@ -57,12 +61,12 @@ Change directory to "purkinjecell" folder.
 Run nrnivmodl ./mod_files to compile the mod files.
 
 The model is provided with 6 protocols:
-Run nrngui -python ./protocols/01_no_channels_ais.py to run the first one. 
+Run "nrngui -python ./protocols/01_no_channels_ais_py3.py" for the first protocol. 
 
 The other protocols are numbered from 02 to 06.
 
 Here is a screenshot from running the command:
-nrngui -python protocols/05_calcium_sodium_bursts.py
+nrngui -python protocols/05_calcium_sodium_bursts_py3.py
 
 <img src="./screenshot.png" alt="screenshot" width="550">
 
@@ -75,3 +79,5 @@ NOTES:
 
 Not tested under Win installations.
 </pre></html>
+
+
